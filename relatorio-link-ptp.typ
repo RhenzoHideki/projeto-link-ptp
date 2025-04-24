@@ -115,11 +115,37 @@ Logo abaixo é possivel vizualizar a imagem.
 
 == Definindo os Equipamentos
 A escolha dos equipamentos é uma etapa crucial no planejamento do enlace. Para garantir a viabilidade do projeto, consideramos fatores como ganho de antena, potência do transmissor e frequencia de operação.
-A seguir, apresentamos uma tabela com as especificações dos equipamentos selecionados para o enlace.
+A seguir, apresentamos uma tabela com as especificações dos equipamentos propostos junto as suas frequencias de operação e outros dados.
 
-== Orçamento
+#let antenas = csv("complementary/comparativo-antenas.csv")
+#align(
+  table(
+    columns: 8,
+    ..antenas.flatten()
+  ),
+  center
+)
+EH2200FX é ideal para enlaces de curta distância com alta capacidade de transmissão, sendo adequado para cenários onde a largura de banda é crítica. No entanto, o custo elevado pode ser um fator limitante.
 
-== Aluguel
+Já AF-5U é mais acessível e oferece um alcance significativamente maior. No entanto, o ganho da antena e a potência de transmissão são inferiores ao EH2200FX, o que pode impactar a qualidade do enlace em cenários de alta interferência.
+
+== Estabilidade do enlace
+EH-2200FX (E-band 71–76/81–86 GHz):
+- Opera em faixa licenciada, com feixe de antena muito estreito (“pencil beam”), praticamente livre de interferência externa.
+- Atenuação atmosférica aproximadamente de 1.2 a 0.4  dB/km em E-band e link budget de até 179 dB (250 MHz) suportam enlaces de até 6,9 km com antenas de 43 dBi.
+- Sensibilidade de recepção efetiva em torno de –60 dBm (com antena de 31cm, 43 dBi e canal de 250 MHz) mantém margem no link de 176–179 dB.
+
+AF-5U (5.725–6.200 GHz)
+- Opera em faixa não licenciada, com EIRP configurável até +50 dBm EIRP; ATPC e modulação adaptativa xRT reduzem interferência e maximizam qualidade do enlace. 
+- Antena integrada split de 23 dBi (TX/RX) e sensibilidade de –95 a –57 dBm (dependendo da modulação e largura de canal) garantem enlace estável mesmo em ambientes com ruído moderado .
+- Links ponto a ponto de 100+ km indicam folga de margem para 4,4 km, com baixa atenuação atmosférica na faixa de 5 GHz.
+
+
+== Viabilidade econômica
+
+== Logística e implantação
+
+==  
 
 = Resultados
 
