@@ -51,16 +51,40 @@ A figura a seguir mostra um dos pontos cadidatos que foi analisado.
   ],
   supplement: "Figura"
 );
+#figure(
+  figure(
+    rect(image("./complementary/norte-da-ilha-2.png")),
+    numbering: none
+  ),
+  caption: [
+    Fotografia do primeiro local.
+
+   Fonte: Elaborada pelo autor
+  ],
+  supplement: "Figura"
+);
 A figura é um ponto onde existe uma torre já existente, que pode ser utilizada para a instalação do enlace. A torre está localizada em uma região com boa visibilidade e acesso, o que facilita a instalação dos equipamentos.
 A seguir, apresentamos a análise do segundo ponto candidato, que também foi considerado para o enlace.
 
 #figure(
   figure(
-    rect(image("./complementary/uni-prf.png")),
+    rect(image("./complementary/uni-prf-1.png",width: 75%)),
     numbering: none
   ),
   caption: [
     Segundo ponto selecionado.
+
+   Fonte: Elaborada pelo autor
+  ],
+  supplement: "Figura"
+);
+#figure(
+  figure(
+    rect(image("./complementary/uni-prf-2.png")),
+    numbering: none
+  ),
+  caption: [
+    Fotografia do segundo local.
 
    Fonte: Elaborada pelo autor
   ],
@@ -141,11 +165,141 @@ AF-5U (5.725–6.200 GHz)
 - Links ponto a ponto de 100+ km indicam folga de margem para 4,4 km, com baixa atenuação atmosférica na faixa de 5 GHz.
 
 
-== Viabilidade econômica
+== Viabilidade
+Para avaliar a viabilidade econômica do projeto, consideramos o custo dos equipamentos e a mão de obra necessária para a instalação do enlace.
+Para isso irémos fazer uma análise separa por equipamento e a mão de obra necessária e também outros custos que podem ser necessários para a instalação do enlace.
 
-== Logística e implantação
+=== Operar Siklu EtherHaul-2200FX
+Operar um elance com o Siklu EtherHaul-2200FX envolve custos de aquisição, instalação e manutenção. O preço do equipamento é elevado, mas oferece alta capacidade de transmissão e baixa latência. A instalação requer mão de obra especializada e pode incluir custos adicionais com infraestrutura, como torres e cabos. A manutenção regular é essencial para garantir o desempenho ideal do enlace.
+A tabela abaixo apresenta uma estimativa de custos para a operação do Siklu EtherHaul-2200FX, considerando os principais fatores envolvidos.
+#let siklu = csv("complementary/comparativo-siklu.csv")
 
-==  
+#align(
+  table(
+    columns: 4,
+    ..siklu.flatten()
+  ),
+  center
+)
+
+O custo de despesa de capital é de um total de R\$55374,82 ou seja os custos de equipamentos e instalação, enquanto o custo de operação gira em torno de R\$ 15477-48477 por ano, considerando a manutenção , custo de energia e licenças.
+
+O equipamento Siklu EtherHaul-2200FX é ideal para aplicações que exigem alta capacidade de transmissão e baixa latência, como serviços de internet de alta velocidade, transmissão de vídeo em tempo real e aplicações críticas em ambientes urbanos. 
+
+=== Operar AF-5U
+Agora uma análise do enlace com o AF-5U, que é um equipamento mais acessível e oferece um alcance significativamente maior. O custo de aquisição do AF-5U é menor em comparação ao Siklu EtherHaul-2200FX, o que torna o projeto mais viável economicamente. A instalação também requer mão de obra especializada, mas os custos adicionais com infraestrutura podem ser menores devido à flexibilidade do equipamento.
+A tabela abaixo apresenta uma estimativa de custos para a operação do AF-5U, considerando os principais fatores envolvidos.
+#pagebreak()
+#let af5u = csv("complementary/comparativo-af5u.csv")
+#align(
+  table(
+    columns: 4,
+    ..af5u.flatten()
+  ),
+  center
+)
+O custo de despesa de capital é de um total de R\$26377,76 ou seja os custos de equipamentos e instalação, enquanto o custo de operação gira em torno de R\$ 14852-48452   por ano, considerando a manutenção , custo de energia e licenças.
+
+== Simulação do enlace
+A simulação do enlace foi realizada utilizando o software RadioMobile, que permite avaliar a viabilidade do enlace considerando fatores como ganho de antena, potência do transmissor e condições atmosféricas. A seguir, apresentamos os resultados da simulação para os dois equipamentos considerados.
+Os pontos podem ser visualizados na imagem abaixo, onde é possivel ver a distancia entre os dois pontos.
+#figure(
+  figure(
+    rect(image("./complementary/enlace-uniPrf-Norte.png")),
+    numbering: none
+  ),
+  caption: [
+    Simulação do enlace.
+
+   Fonte: Elaborada pelo autor
+  ],
+  supplement: "Figura"
+);
+
+=== Resultados da Simulação do Siklu EtherHaul-2200FX
+A simulação do enlace utilizando o Siklu EtherHaul-2200FX apresentou os seguintes resultados:
+#let siklu-perfomance = csv("complementary/71-performance.csv")
+#let siklu-propagation = csv("complementary/71-propagation.csv")
+#let siklu-radio-system = csv("complementary/71-radio-system.csv")
+Abaixo temos os resultados da simulação do Siklu EtherHaul-2200FX, onde é possivel ver a performance do enlace, a propagação e o sistema de radio.
+#align(
+  table(
+    columns: 2,
+    ..siklu-perfomance.flatten()
+  ),
+  center
+)
+#align(
+  table(
+    columns: 2,
+    ..siklu-propagation.flatten()
+  ),
+  center
+)
+#align(
+  table(
+    columns: 2,
+    ..siklu-radio-system.flatten()
+  ),
+  center
+)
+Aqui é possível ver a imagem do link:
+
+#figure(
+  figure(
+    rect(image("./complementary/radio-71GHz.png")),
+    numbering: none
+  ),
+  caption: [
+    Simulação do enlace.
+
+   Fonte: Elaborada pelo autor
+  ],
+  supplement: "Figura"
+);
+
+=== Resultados da Simulação do AF-5U
+A simulação do enlace utilizando o AF-5U apresentou os seguintes resultados:
+#let af5u-perfomance = csv("complementary/5-7-performance.csv")
+#let af5u-propagation = csv("complementary/5-7-propagation.csv")
+#let af5u-radio-system = csv("complementary/5-7-radio-system.csv")
+
+Abaixo temos os resultados da simulação do AF-5U, onde é possivel ver a performance do enlace, a propagação e o sistema de radio.
+#align(
+  table(
+    columns: 2,
+    ..af5u-perfomance.flatten()
+  ),
+  center
+)
+#align(
+  table(
+    columns: 2,
+    ..af5u-propagation.flatten()
+  ),
+  center
+)
+#align(
+  table(
+    columns: 2,
+    ..af5u-radio-system.flatten()
+  ),
+  center
+)
+Aqui é possível ver a imagem do link:
+#figure(
+  figure(
+    rect(image("./complementary/radio-5-7GHz.png")),
+    numbering: none
+  ),
+  caption: [
+    Simulação do enlace.
+
+   Fonte: Elaborada pelo autor
+  ],
+  supplement: "Figura"
+);
+#pagebreak()
 
 = Resultados
 
