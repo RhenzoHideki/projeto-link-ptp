@@ -1,9 +1,9 @@
 Distance,4.436 km
 Precision,10.0 m
 Frequency,71000.000 MHz
-Equivalent Isotropically Radiated Power,4456.255 W
-System gain,166.09 dB
+Equivalent Isotropically Radiated Power,8021.258 W
+System gain,178.64 dB
 Required reliability,90%
-Received Signal,-63.78 dBm
-Received Signal,144.90 μV
-Fade Margin,6.32 dB
+Received Signal,-51.23 dBm
+Received Signal,614.75 μV
+Fade Margin,18.87 dB

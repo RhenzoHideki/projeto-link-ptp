@@ -46,7 +46,7 @@ A figura a seguir mostra um dos pontos cadidatos que foi analisado.
   caption: [
     Primeiro ponto selecionado.
 
-   Fonte: Elaborada pelo autor
+   Fonte: Google maps
   ],
   supplement: "Figura"
 );
@@ -58,7 +58,7 @@ A figura a seguir mostra um dos pontos cadidatos que foi analisado.
   caption: [
     Fotografia do primeiro local.
 
-   Fonte: Elaborada pelo autor
+   Fonte: Google maps
   ],
   supplement: "Figura"
 );
@@ -73,7 +73,7 @@ A seguir, apresentamos a análise do segundo ponto candidato, que também foi co
   caption: [
     Segundo ponto selecionado.
 
-   Fonte: Elaborada pelo autor
+   Fonte: Google maps
   ],
   supplement: "Figura"
 );
@@ -85,7 +85,7 @@ A seguir, apresentamos a análise do segundo ponto candidato, que também foi co
   caption: [
     Fotografia do segundo local.
 
-   Fonte: Elaborada pelo autor
+   Fonte: Google maps
   ],
   supplement: "Figura"
 );
@@ -118,7 +118,7 @@ Logo abaixo temos a imagem da distância do enlace baseado no google maps. Como 
   caption: [
     Distância entre pontos.
 
-   Fonte: Elaborada pelo autor
+   Fonte: Google maps 
   ],
   supplement: "Figura"
 );
@@ -132,7 +132,7 @@ Logo abaixo é possivel vizualizar a imagem.
   caption: [
     Geografia entre pontos.
 
-   Fonte: Elaborada pelo autor
+   Fonte: Elaborada pelo autor no RadioMobile
   ],
   supplement: "Figura"
 );
@@ -210,7 +210,7 @@ Os pontos podem ser visualizados na imagem abaixo, onde é possivel ver a distan
   caption: [
     Simulação do enlace.
 
-   Fonte: Elaborada pelo autor
+   Fonte: Elaborada pelo autor no RadioMobile
   ],
   supplement: "Figura"
 );
@@ -252,7 +252,7 @@ Aqui é possível ver a imagem do link:
   caption: [
     Simulação do enlace.
 
-   Fonte: Elaborada pelo autor
+   Fonte: Elaborada pelo autor no RadioMobile
   ],
   supplement: "Figura"
 );
@@ -296,7 +296,7 @@ Aqui é possível ver a imagem do link:
   caption: [
     Simulação do enlace.
 
-   Fonte: Elaborada pelo autor
+   Fonte: Elaborada pelo autor no RadioMobile
   ],
   supplement: "Figura"
 );
