@@ -25,23 +25,22 @@ Além disso, será considerado o orçamento necessário, incluindo o preço dos 
 
 Serão avaliados os materiais obrigatórios e recomendados, análise de custo operacional, configurações necessárias, e aspectos como marketing B2B ou B2C, gerenciamento, implantação com especificações do enlace e conformidade com órgãos regulatórios, O&M, obras, financeiro, sustentabilidade, suporte e análise geográfica da região. Por fim, será verificado se o cenário proposto é cabível e útil.
 
-== Detalhes do Enlace Planejado
-
-O enlace a ser projetado apresenta as seguintes características principais:
-- Tipo de enlace: Ponto a Ponto (PTP)
+== Escopo e limitações
+Para a montagem do cenário foi necessário atender um escopo de requisitos, que são:
+- Tipo de enlace: Ponto a ponto (PTP)
 - Distância mínima entre os pontos: 3 km
 - Taxa de confiabilidade esperada: Pelo menos 85%
 
 #pagebreak()
-= Desenvolvimento
-O desenvolvimento do projeto será dividido em várias etapas, incluindo a análise do cenário, a escolha dos equipamentos, o planejamento do enlace e a implementação. A seguir, apresentamos um resumo de cada etapa.
+= Cenário
 
-== Definindo os Pontos do Enlace
+Para a montagem do cenário, foram estudadas diversos locais, levando em consideração a distância entre os pontos, a topografia da região e a viabilidade de instalação dos equipamentos. Por fim, foi escolhido um cenário que atende aos requisitos do projeto e que possui uma justificativa plausível para a implementação do enlace. O cenário escolhido para o projeto se localiza ao norte da Ilha de Florianópolis, criando um enlace entre a UniPRF e uma torre de uma operadora.
+
 A análise do cenário envolve a identificação dos pontos de transmissão e recepção, bem como a avaliação das condições geográficas da região. Para isso, utilizamos o software RadioMobile, que permite simular o enlace e avaliar sua viabilidade.
 A figura a seguir mostra um dos pontos cadidatos que foi analisado.
 #figure(
   figure(
-    rect(image("./complementary/norte-da-ilha-1.png")),
+    rect(image("./complementary/norte-da-ilha-1.png",width: 75%)),
     numbering: none
   ),
   caption: [
@@ -53,7 +52,7 @@ A figura a seguir mostra um dos pontos cadidatos que foi analisado.
 );
 #figure(
   figure(
-    rect(image("./complementary/norte-da-ilha-2.png")),
+    rect(image("./complementary/norte-da-ilha-2.png",width: 55%)),
     numbering: none
   ),
   caption: [
@@ -90,6 +89,7 @@ A seguir, apresentamos a análise do segundo ponto candidato, que também foi co
   ],
   supplement: "Figura"
 );
+
 A UniPRF é um local estratégico para a segurança pública, sendo um centro de formação e capacitação de profissionais da área. A instalação do enlace neste local não apenas atenderia às necessidades de comunicação da instituição, mas também criaria um enlace de redundância, aumentando a confiabilidade da rede.
 
 Além disso, a localização da UniPRF apresenta características favoráveis para a instalação do enlace, como a presença de infraestrutura existente e uma posição geográfica que facilita a propagação do sinal. A seguir, apresentamos uma tabela comparativa entre os dois pontos candidatos, destacando os principais fatores considerados na análise.
@@ -107,7 +107,7 @@ Para referência, os pontos foram colocados das seguintes formas dentro do Radio
   center
 )
 
-== Especificações do Enlace
+= Especificações do enlace
 A especificação do enlace envolve a definição dos equipamentos a serem utilizados, incluindo antenas, transmissores e receptores. Para isso, consideramos as características dos pontos selecionados e as condições geográficas da região.
 Logo abaixo temos a imagem da distância do enlace baseado no google maps. Como é possivel ver, a distância entre os dois pontos é de aproximadamente 4,4 km, distância é adequada para o projeto.
 #figure(
@@ -137,7 +137,7 @@ Logo abaixo é possivel vizualizar a imagem.
   supplement: "Figura"
 );
 
-== Definindo os Equipamentos
+= Definindo os equipamentos
 A escolha dos equipamentos é uma etapa crucial no planejamento do enlace. Para garantir a viabilidade do projeto, consideramos fatores como ganho de antena, potência do transmissor e frequencia de operação.
 A seguir, apresentamos uma tabela com as especificações dos equipamentos propostos junto as suas frequencias de operação e outros dados.
 
@@ -153,7 +153,7 @@ EH2200FX é ideal para enlaces de curta distância com alta capacidade de transm
 
 Já AF-5U é mais acessível e oferece um alcance significativamente maior. No entanto, o ganho da antena e a potência de transmissão são inferiores ao EH2200FX, o que pode impactar a qualidade do enlace em cenários de alta interferência.
 
-== Estabilidade do enlace
+== Comparativo de antenas
 EH-2200FX (E-band 71–76/81–86 GHz):
 - Opera em faixa licenciada, com feixe de antena muito estreito (“pencil beam”), praticamente livre de interferência externa.
 - Atenuação atmosférica aproximadamente de 1.2 a 0.4  dB/km em E-band e link budget de até 179 dB (250 MHz) suportam enlaces de até 6,9 km com antenas de 43 dBi.
@@ -163,7 +163,6 @@ AF-5U (5.725–6.200 GHz)
 - Opera em faixa não licenciada, com EIRP configurável até +50 dBm EIRP; ATPC e modulação adaptativa xRT reduzem interferência e maximizam qualidade do enlace. 
 - Antena integrada split de 23 dBi (TX/RX) e sensibilidade de –95 a –57 dBm (dependendo da modulação e largura de canal) garantem enlace estável mesmo em ambientes com ruído moderado .
 - Links ponto a ponto de 100+ km indicam folga de margem para 4,4 km, com baixa atenuação atmosférica na faixa de 5 GHz.
-
 
 == Viabilidade
 Para avaliar a viabilidade econômica do projeto, consideramos o custo dos equipamentos e a mão de obra necessária para a instalação do enlace.
@@ -258,6 +257,8 @@ Aqui é possível ver a imagem do link:
   supplement: "Figura"
 );
 
+#pagebreak()
+
 === Resultados da Simulação do AF-5U
 A simulação do enlace utilizando o AF-5U apresentou os seguintes resultados:
 #let af5u-perfomance = csv("complementary/5-7-performance.csv")
@@ -301,5 +302,21 @@ Aqui é possível ver a imagem do link:
 );
 #pagebreak()
 
+= Discussão
+A análise dos resultados da simulação do enlace utilizando o Siklu EtherHaul-2200FX e o AF-5U mostra que ambos os equipamentos são viáveis para a implementação do enlace. No entanto, o Siklu EtherHaul-2200FX apresenta uma performance superior em termos de capacidade de transmissão e latência, tornando-o mais adequado para aplicações críticas.
+Por outro lado, o AF-5U é uma opção mais acessível e oferece um alcance maior, o que pode ser vantajoso em cenários onde o custo é um fator limitante. A escolha entre os dois equipamentos deve considerar as necessidades específicas do projeto, incluindo a capacidade de transmissão, a latência e o orçamento disponível. Além disso, a análise dos custos operacionais mostra que o Siklu EtherHaul-2200FX apresenta um custo de operação mais elevado em comparação ao AF-5U.
+
+Por fim, apesar do custo elevado do Siklu EtherHaul-2200FX, sua performance superior pode justificar o investimento no projeto, especialmente pela alta capacidade de transmissão e baixa latência.
 
 = Referências
++ Prefeitura de Itajaí. Edital nº 1680/2025 – Contratação de serviços de instalação de radioenlace PTP. Disponível em: https://intranet2.itajai.sc.gov.br/licitacoes/usuario-externo/download/edital/1680.
++ ANATEL. Ato nº 915, de 01 de fevereiro de 2024. Requisitos Técnicos e Operacionais para uso das faixas de radiofrequências do Serviço Limitado Privado. Disponível em: https://informacoes.anatel.gov.br/legislacao/atos-de-requisitos-tecnicos-de-gestao-do-espectro/2024/1920-ato-915.
++ ANATEL. Resolução nº 680, de 27 de junho de 2017. Regulamento sobre Equipamentos de Radiocomunicação de Radiação Restrita. Disponível em: https://informacoes.anatel.gov.br/legislacao/index.php/component/content/article?id=936.
++ ANATEL. Ato nº 4800, de 01 de setembro de 2020. Requisitos Técnicos e Operacionais de uso das faixas acima de 2 GHz para enlaces ponto a ponto (revogado em parte). Disponível em: https://pt.scribd.com/document/562123103/ATO-4800-01092020.
++ Siklu Communications Ltd. EtherHaul™ 2200FX Datasheet. Disponível em: https://www.winncom.com/pdf/Siklu_EtherHaul_2200FX/Siklu_EtherHaul2200FX.pdf
++ ANATEL. Taxas do Radioamador. Portal Gov.br. Disponível em: https://www.gov.br/anatel/pt-br/regulado/outorga/radioamador-e-radio-cidadao/taxas-do-radioamador.
++ ANATEL. Outorga do Radioamador – Serviço Radioamador e Rádio do Cidadão. Portal Gov.br. Disponível em: https://www.gov.br/anatel/pt-br/regulado/outorga/radioamador-e-radio-cidadao.
++ EverythingRF. What is the impact of rain on RF signal propagation? Disponível em: https://www.everythingrf.com/community/what-is-the-impact-of-rain-on-rf-signal-propagation.
++ RISBO. Antena Parabólica E-Band (45 dBi) – Risbo. Disponível em: https://www.risbo.sg/index.php?route=product/product&path=90&product_id=134&sort=p.price&order=ASC.
++ Aztech Tecnologia. Antena airFiber 5.7–6.2 GHz 12 Gbps 100 km – Ubiquiti AF-5U. Disponível em: https://www.aztech.com.br/antena-airfiber-57-62ghz-12gbps-100km-alcanc-u-af-5u-ubiquiti.
++ Ubiquiti Inc.. airFiber 5 GHz High-Band Bridge – AF-5U. Disponível em: https://store.ui.com/us/en/products/af-5u.
