@@ -308,6 +308,7 @@ Por outro lado, o AF-5U é uma opção mais acessível e oferece um alcance maio
 
 Por fim, apesar do custo elevado do Siklu EtherHaul-2200FX, sua performance superior pode justificar o investimento no projeto, especialmente pela alta capacidade de transmissão e baixa latência.
 
+#pagebreak()
 = Referências
 + Prefeitura de Itajaí. Edital nº 1680/2025 – Contratação de serviços de instalação de radioenlace PTP. Disponível em: https://intranet2.itajai.sc.gov.br/licitacoes/usuario-externo/download/edital/1680.
 + ANATEL. Ato nº 915, de 01 de fevereiro de 2024. Requisitos Técnicos e Operacionais para uso das faixas de radiofrequências do Serviço Limitado Privado. Disponível em: https://informacoes.anatel.gov.br/legislacao/atos-de-requisitos-tecnicos-de-gestao-do-espectro/2024/1920-ato-915.
